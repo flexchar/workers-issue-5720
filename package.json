@@ -1,13 +1,12 @@
 {
-  "scripts": {
-    "dev": "wrangler dev src/index.ts",
-    "deploy": "wrangler deploy --minify src/index.ts"
-  },
-  "dependencies": {
-    "hono": "^4.2.9"
-  },
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240403.0",
-    "wrangler": "^3.47.0"
-  }
+    "scripts": {
+        "test": "wrangler deploy src/index.ts --define SENTRY_RELEASE:$(git rev-parse HEAD) --outdir dist --dry-run"
+    },
+    "dependencies": {
+        "hono": "^4.2.9"
+    },
+    "devDependencies": {
+        "@cloudflare/workers-types": "^4.20240403.0",
+        "wrangler": "^3.47.0"
+    }
 }
